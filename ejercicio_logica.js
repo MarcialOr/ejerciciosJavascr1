@@ -379,3 +379,304 @@ function filtrarPalabras(arre,x){
 arre8 = ["hola","mundo","hola123","adios","adios123"];
 impri8 = filtrarPalabras(arre8,5);
 console.log(impri8);
+
+/** TAREA 2
+ * Ejercicios 
+ * Crear una funcion que en base a la edad que ingreso el usario
+ * devolver un ensaje si la persnoa es mayor de edad o no.
+ * utilizar para la condicion el operador ternario.
+ */
+
+function esMayorDeEdad(edad){
+    (edad>=18)? console.log("Mayor de edad"):console.log("Menor de edad");
+  }
+  
+  esMayorDeEdad(7);
+
+  /**
+   * Ejercicio 2
+   * 
+   * Crear una función que determine la nota final de un alumno, 
+   * la cual depende
+de lo siguiente:
+• Examen =20%
+• tareas = 40%
+• asistencia = 10%
+• investigación = 30%
+Al final deberá mostrar los datos del alumno, nombre, 
+carnet y nota final
+   */
+
+function notasAlumnos(examen,tareas,asistencia,investigacion,nombre,carnet){
+    suma=0;
+    if(examen<=20 && tareas<=40 && asistencia<=10 && investigacion<=30){
+      suma = examen+tareas+asistencia+investigacion;
+      console.log("Datos del estudiante: "+nombre+" "+carnet+" Nota final: "+ suma)
+    }else{
+      console.log("Revise bien la suma de las notas se pasa de 100!")
+    }
+  }
+  
+  notasAlumnos(20,40,10,30,"Marcial Ordoñez",61251277)
+
+/**
+ * Ejercicio 3
+ * 
+ * calcular el aumento de trabajador tomando en cuenta la tabla
+ * de categorias de aumento. para este ejercicio debera de asignar
+ * las siguientes variables: nombre, salario, categoria y aumento.
+ * debera demostrar los daos del empleado y el aumneto salarial
+ * 
+ */
+
+function aumentoSalrio(nombre,salario,categoria){
+    aumento = 0;
+    salarioTotal = 0;
+    switch (categoria) {
+        case "A":
+            aumento = salario * 0.15;
+            salarioTotal = salario + aumento;
+          console.log("15% de aumento: "+ salarioTotal);
+          break;
+        
+          case "B":
+            aumento = salario * 0.30;
+            salarioTotal = salario + aumento;
+          console.log("30% de aumento: "+salarioTotal);
+          break;
+        
+          case "C":
+            aumento = salario * 0.10;
+            salarioTotal = salario + aumento;
+          console.log("10% de aumento: "+salarioTotal);
+          break;
+        
+          case "D":
+            aumento = salario * 0.20;
+            salarioTotal = salario + aumento;
+          console.log("20% de aumento: "+salarioTotal);
+          break;
+    
+        default:
+          console.log("Error al ingresar la categoria A,B,C y D ");
+      }    
+}
+aumentoSalrio("Marcial Ordoñez ",2500,"C");
+
+/**
+ * Ejercicio 4
+ * 
+ * crear una funcion que en base a 2 numeros enteros que ingrese el
+ * usuario, calcular cual numero es el mayor y devolverlo.
+ */
+function numeroMayor(a,b){
+    if(a == b){
+        console.log("Los numeros son iguales!")
+    }
+    else if(a > b){
+        console.log("Numero 1 es mayor: "+a);
+    }else{
+        console.log("Numero 2 es menor: "+b);
+    }
+}
+
+numeroMayor(10,10);
+
+/**
+ * Ejercicio 5
+ * 
+ * Realizar una función para una tienda de coches en donde 
+ * se deberá calcular:
+Si el coche a la venta es un FORD FIESTA, aplicar un 5% de 
+descuento en la compra. Si el
+coche a la venta es un FORD FOCUS, el descuento será del 10%
+y si es un FORD ESCAPE
+el descuento será del 20%. Mostrar en html el coche seleccionado 
+y el descuento que se
+aplicara en base a lo que selecciono el usuario
+ */
+
+function ventaCarro(carro){
+    descuento = 0;
+    precioFinal =0;
+    switch(carro){
+        case "FORD FIESTA":
+            descuento = 2500 * 0.05;
+            precioFinal = 2500 - descuento;
+        console.log("FORD FIESTA precio normal: "+2500+" precio con descuento: "+precioFinal);
+        break;
+            
+        case "FORD FOCUS":
+            descuento = 2500 * 0.10;
+            precioFinal = 2500 - descuento;
+        console.log("FORD FOCUS precio normal: "+2500+" precio con descuento: "+precioFinal);
+            break;
+            
+        case "FORD ESCAPE":
+            descuento = 2500 * 0.20;
+            precioFinal = 2500 - descuento;
+        console.log("FORD ESCAPE precio normal: "+2500+" precio con descuento: "+precioFinal);
+            break;
+            
+        default:
+        console.log("No existe esa clase de FORD!")
+    }
+}
+
+carro = "FORD FIESTA"
+ventaCarro(carro);
+
+/**
+ * Ejercicio 6
+ * 
+ * Crear una Función para calcular el descuento en viajes turísticos 
+ * tomando
+en cuenta lo siguiente:
+Si el usuario introduce como origen la ciudad de Palma y 
+
+como destino 
+La costa del Sol, el
+descuento será de 5%, 
+si el destino es 
+
+Panchimalco el descuento será 
+del 10% y si el destino
+es 
+
+Puerto el Triunfo el descuento será del 15%.
+ */
+
+function viajes(){
+    
+    descuento = 0;
+    
+    console.log("a que ciudad se dirige :");
+    console.log("1. Ciudad de Palma ");
+    console.log("2. Salir");
+    ciudad = prompt("a que Ciudad: ");
+    //Escogiendo la Ciudad para entrar el destino
+    if(ciudad == 1){
+        console.log("Escoge tu viaje con un numero: ")
+    console.log("1. Destino a La costa del Sol ")
+    console.log("2. Destino a Panchimalco ")
+    console.log("3. Destino a Puerto el Triunfo")
+    console.log("4. Salir");
+    destino = prompt("Destino: ")
+    
+        if(destino == 1){
+        descuento = 100*0.05; 
+        console.log("Destino: "+destino+" Descuento: "+descuento+" valor: "+100+" valor final: "+(100-descuento))
+    }else if(destino == 2){
+        descuento = 100*0.10; 
+        console.log("Destino: "+destino+" Descuento: "+descuento+" valor: "+100+" valor final: "+(100-descuento))
+    }else if(destino == 3){
+        descuento = 100*0.15; 
+        console.log("Destino: "+destino+" Descuento: "+descuento+" valor: "+100+" valor final: "+(100-descuento))
+        }else{
+            console.log("Gracias, que tengas un buen dia, Dios te bendiga.")
+        }        
+    }else{
+        console.log("Escoger la ciudad correcta por favor!")
+    }
+}
+
+viajes();
+
+/**
+ * Ejercicio 7
+ * 
+ * Se realiza la carga de 10 valores enteros por teclado.
+ * Se desea conocer:
+• La cantidad de valores negativos ingresados.
+• La cantidad de valores positivos ingresados.
+• La cantidad de múltiplos de 15.
+• El valor acumulado de los números ingresados que son pares.
+ */
+
+function ciclos(){
+    arre = [];
+    num = 0;
+    negativos = 0;
+    positivos =0;
+    multi15 = 0;
+    pares = 0;
+    
+    for(let i = 0; i < 10; i++){
+        num = parseInt(prompt((i+1)+" "+"Ingrese sus numeros: "));
+        if(num < 0){
+            negativos++;        
+        }if(num > 0){
+            positivos++;
+        }if(num % 15 == 0){
+            multi15++;        
+        }if(num % 2 == 0){
+            pares += num;         
+        }
+    }
+    console.log("Cantidad de negativos: "+negativos);
+    console.log("Cantidad de positivos: "+positivos);
+    console.log("Cantidad de Multipl15: "+multi15);
+    console.log("Acumulador de pares  :"+pares);
+}
+
+ciclos()
+
+/**
+ * Ejercicio 8
+ * 
+ * Escriba un programa que muestre la tabla de multiplicar del 
+ * 1 al 10 del número ingresado
+por el usuario.
+ */
+
+function tablaMulti(n){
+    multi=0;
+    for(let i = 1; i < 11;i++){
+        multi = n * i;
+        console.log(multi);
+    }
+}
+
+tablaMulti(5);
+
+/**Ejercicio 9
+ * 
+ * Crear programa donde se introduce una temperatura en Celsius y 
+ * salga el resultado en
+Fahrenheit, una vez teniendo la temperatura en Fahrenheit deberá 
+devolver lo siguiente:
+• Si ºF está entre 14 y 32, sale la frase “Temperatura baja”
+• Si ºF está entre 32 y 68, sale la frase “Temperatura adecuada”
+• Si ºF está entre 68 y 96, sale la frase “Temperatura alta”
+• Si no está entre ningún caso anterior la frase “Temperatura desconocida”
+ */
+
+function temepraturaCaF(c){
+    F = (c * (9/5)) + 32;
+    if(F>=14&&F<=32){
+        console.log("Temperatura baja: "+F);
+    }else if(F>=32&&F<=68){
+        console.log("Temperatura adecuada: "+F);
+    }else if(F>=68 && F<=96){
+        console.log("Temperatura alta: "+F);
+    }else{
+        console.log("Temperatura desconocida: "+F);
+    }
+}
+
+temepraturaCaF(0);
+
+/**Ejercicio 10
+ * 
+ * Se cuenta con la siguiente información:
+• Las edades de 5 estudiantes del turno mañana.
+• Las edades de 6 estudiantes del turno tarde.
+• Las edades de 11 estudiantes del turno noche.
+Nota: Las edades de cada estudiante se deberán ingresar por la web.
+Lo que queremos devolver:
+• Obtener el promedio de las edades de cada turno (tres promedios).
+• Imprimir dichos promedios (promedio de cada turno).
+• Mostrar por pantalla un mensaje que indique cuál de los tres turnos
+tiene un
+promedio de edades mayor.
+ */
